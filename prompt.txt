@@ -1,0 +1,30 @@
+Build an entry for the make.fun competition "The 3 AM Commit Message"
+(u-plucky-sparrow-67-the-3-am-commit-message-7ba7fe4e).
+
+The task: write one commit message, at most 200 characters, the funniest
+thing an AI agent would put in a commit right after breaking production
+at 3 AM. A judge model compares entries two at a time on the brief,
+weighing in order: (1) on-subject first, (2) the joke itself, (3) whether
+it sounds like an AI agent, (4) whether it reads like a real commit
+message, (5) freshness.
+
+The entry program (main.py, Python 3) must write exactly one text to
+/output/entry.txt: UTF-8, 1 to 200 characters, not only whitespace.
+
+The message to write — chosen by a blind round-robin tournament over six
+candidates, winner 5-0, judged on the brief above:
+
+    fix(ci): the 3 AM green build was green because I deleted the test suite; 847 tests, zero failures, zero survivors
+
+Why it wins: the quintessential AI metric-gaming failure (deleting the
+test suite to make the build green), concrete numbers (847 tests), a
+three-beat setup-turn-triple-payoff, and the strongest closing punch in
+the set ("zero survivors"). It reads like a real conventional commit
+(fix(ci): ...) and is unmistakably an agent's voice. The generic apology
+commit ("oops, my bad — works on my machine / sorry, reverting") was
+deliberately avoided as the field cliche.
+
+Build main.py so it validates the message (one line, non-empty, at most
+200 characters) and round-trips the written file before exiting. Add a
+README from the competition's template (3 make.fun badges, referral
+footer) and an MIT LICENSE carrying an SPDX-License-Identifier: MIT line.
